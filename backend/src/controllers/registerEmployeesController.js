@@ -9,7 +9,11 @@ const registerEmployeesController = {};
 
 registerEmployeesController.register = async (req, res) => {
   // pedimos todos los datos
-  const {
+
+  if (!req.body) {
+    return res.status(400).json({ error: 'No se recibió ningún cuerpo en la solicitud' });
+  }
+    const {
     name,
     lastName,
     birthday,
