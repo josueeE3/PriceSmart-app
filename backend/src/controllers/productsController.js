@@ -28,7 +28,7 @@ productsController.deleteProducts = async (req, res) => {
 // UPDATE
 productsController.updateProducts = async (req, res) => {
   // Solicito todos los valores
-  const { name, description, price } = req.body;
+  const { name, description, price, stock } = req.body;
   // Actualizo
   await productsModel.findByIdAndUpdate(
     req.params.id,
